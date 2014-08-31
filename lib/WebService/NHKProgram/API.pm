@@ -37,7 +37,7 @@ sub _build_provider{
  my $self = shift;
  return WebService::NHKProgram::API::Provider->new(
     furl => Furl->new(
-      agent   => 'WWW::NHKProgram::API(Perl)',
+      agent   => 'WebService::NHKProgram::API(Perl)',
       timeout => 10,
     ),
     api_key => $self->api_key
