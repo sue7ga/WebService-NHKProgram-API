@@ -5,6 +5,9 @@ use warnings;
 use Furl;
 
 use WebService::NHKProgram::API::Provider::List;
+use WebService::NHKProgram::API::Provider::Genre;
+use WebService::NHKProgram::API::Provider::Info;
+use WebService::NHKProgram::API::Provider::Nowonair;
 
 use Class::Accessor::Lite::Lazy(
   new => 1,

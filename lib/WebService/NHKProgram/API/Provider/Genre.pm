@@ -1,5 +1,4 @@
-package WebService::NHKProgram::API::Provider::List;
-
+package WebService::NHKProgram::API::Provider::Genre;
 use strict;
 use warnings;
 use JSON;
@@ -10,17 +9,20 @@ sub call{
 
  my $area = $arg->{area};
  my $service = $arg->{service};
+ my $genre = $arg->{genre};
  my $date = $arg->{date};
 
  my $content = WebService::NHKProgram::API::Provider::Common::call(
    $class,
-   "list/%(area)s/%(service)s/%(date)s.json",
+   "genre/%(area)s/%(service)s/%(genre)s/%(date)s.json",
    {
      area => $area,
-    service => $service,
-    date  => $date,
+     service => $service,
+     genre => $genre,
+     date => $date
    }
  );
+
  return JSON::decode_json($content->content)->{list}->{g1};
 }
 

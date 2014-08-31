@@ -15,8 +15,22 @@ our $VERSION = "0.01";
 
 sub list{
  my $self = shift;
- my $content = $self->provider->dispatch('list',@_);
- return $content;
+ return $self->provider->dispatch('list',@_);
+}
+
+sub genre{
+ my $self = shift;
+ return $self->provider->dispatch('genre',@_);
+}
+
+sub info{
+ my $self = shift;
+ return $self->provider->dispatch('info',@_);
+}
+
+sub now_on_air{
+ my $self = shift;
+ return $self->provider->dispatch('nowonair',@_);
 }
 
 sub _build_provider{
